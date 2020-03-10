@@ -1,0 +1,221 @@
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+textarea:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+input:focus
+	&::-webkit-input-placeholder
+		color: transparent!important
+	&::-moz-placeholder
+		color: transparent!important
+	&::-ms-input-placeholder
+		color: transparent!important
+
+html
+	-ms-overflow-style: none
+	scrollbar-width: none
+	&::-webkit-scrollbar
+		width: 0
+	&::-webkit-scrollbar
+		width: 0
+
+
+html
+  overflow: scroll
+  overflow-x: hidden
+::-webkit-scrollbar
+  width: 0px
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Roboto', sans-serif
+	overflow-x: hidden
+	color: $text
+
+// Custom Sass / Remove before use
+
+.container
+	max-width: 700px
+	padding:
+		right: $gutter/2
+		left: $gutter/2
+	margin:
+		left: auto
+		right: auto
+
+
+	input
+		padding-left: 10px!important
+
+.form__close
+	position: absolute
+	top: 30px
+	right: 30px
+	cursor: pointer
+
+.form input::-moz-placeholder, .form textarea::-moz-placeholder
+	color: #363636
+	opacity: 1
+
+.input-cheked__text
+	position: relative
+	a
+		color: red
+		text-decoration: underline
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: -50px
+		width: 30px
+		height: 30px
+		border-radius: 3px
+		border: 2px solid red
+
+button[type=submit]
+	border: 2px solid #e2e2e2
+	padding: 9px 9px 9px 30px
+	color: #363636
+	margin-bottom: 10px
+	font-size: 14px
+	cursor: pointer
+	border-radius: 25px
+
+.mfp-close
+	width: 22px
+	height: 22px
+	padding: 0
+	right: 8px
+	top: 5px
+	.fa
+		display: block
+
+.form
+	position: relative
+	display: flex
+	margin: 0 auto
+	flex-direction: column
+	max-width: 600px
+	width: 100%
+	margin: 50px auto 0 auto
+	padding: 40px
+	background-color: #fff
+	.form__p
+		color: #363636
+		text-align: center
+		font-size: 11px
+		max-width: 300px
+		margin: 0 auto
+		line-height: 14px
+	.h3
+		font-size: 500px
+		font-size: 30px
+		color: #000
+		margin: 0
+		padding-bottom: 20px
+		text-align: center
+	.btn
+		margin: 10px auto 20px
+		text-transform: uppercase
+		height: 52px
+
+label
+	font-size: 13px
+
+.input-cheked
+	cursor: pointer
+	padding-left: 20px
+	max-width: 520px
+	margin: 20px auto 0
+	input
+		display: none
+	input[type=checkbox]:checked
+		& + label
+			&:before
+				content: "\f00c"
+				font-family: "FontAwesome"
+				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2)
+				font-size: 20px
+				color: red
+				text-align: center
+				line-height: 15px
+				position: absolute
+				top: 8px
+				left: -24px
+	label
+		line-height: 16px
+
+button
+	&.mfp-close
+		padding: 20px
+
+.wrap-inpute
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	-webkit-flex-direction: column
+	-moz-flex-direction: column
+	-ms-flex-direction: column
+	-o-flex-direction: column
+	flex-direction: column
+
+.wrap-inpute__item--select
+	padding: 10px 0
+	select
+		padding: 10px
+		border: 2px solid #e2e2e2
+		border-radius: 20px
+		width: 100%
+
+.wrap-inpute__item
+	width: 100%
+	input
+		width: 100%
+		max-width: 100%
+		border-radius: 30px
+	label
+		display: block
+		font-size: 13px
+
+.form input, .form textarea
+	border: 2px solid #e2e2e2
+	padding: 9px 9px 9px 30px
+	color: #363636
+	margin-bottom: 10px
+	font-size: 14px
+
+.form input::-webkit-input-placeholder, .form textarea::-webkit-input-placeholder
+	color: #363636
+	opacity: 1
+
+textarea
+	border-radius: 30px
+
+.form input::-ms-input-placeholder, .form textarea::-ms-input-placeholder
+	color: #363636
+

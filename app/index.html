@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="icon" href="img/favicon.png">
+	<meta property="og:image" content="img/@1x/preview.jpg">
+	
+	<link rel="stylesheet" href="css/datepicker.min.css">
+	<link rel="stylesheet" href="css/styles.min.css">
+
+</head>
+
+<body>
+
+	<div id="app">
+		<form class="form" id="callback" @submit.prevent="onSubmit">
+			<div class="form__close" onclick="alert('Этот крестик для красоты')">✖</div>
+			<h3>Онлайн запись</h3>
+			<div class="wrap-inpute">
+				<div class="wrap-inpute__item">
+					<label for="">Ваше имя:</label>
+					<input type="text" name="Имя" v-model="post.name">
+				</div>
+				<div class="wrap-inpute__item">
+					<label for="">Укажите ваш телефон:</label>
+					<input class="input-phone" type="text" name="Телефон" v-model="post.phone">
+				</div>
+				<div class="wrap-inpute__item wrap-inpute__item--select">
+					<label>Салон:</label>
+					<select v-model="post.salon">
+						<option 
+						v-for="location of locations"
+						:key="location.id"
+						:value="location.id"
+						>{{location.adress}}</option>
+					</select>
+				</div>
+				<div class="wrap-inpute__item wrap-inpute__item--select">
+					<label>Мастер:</label>
+					<select v-model="post.master">
+						<option 
+						v-for="master of masters"
+						:key="master.id"
+						:value="master.id"
+						>{{master.fio}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="wrap-inpute__item">
+				<label>Дата:</label>
+				<input id="calendar" v-model="post.date" />
+			</div>
+			<div class="wrap-inpute__item wrap-inpute__item--select">
+				<label>Время:</label>
+				<select v-model="post.time">
+					<option 
+					v-for="time of times"
+					:key="time.id"
+					>{{time.time}}</option>
+				</select>
+			</div>
+			<button type="submit">Отправить заявку</button>
+
+		</form>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="js/datepicker.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.js"></script>
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
