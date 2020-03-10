@@ -42,9 +42,10 @@ new Vue({
 
   async created(){
   	try {
-  		const res = await axios.get('http://localhost:3000/json/salon.json')
-  		const res2 = await axios.get('http://localhost:3000/json/gettimetable.json')
-  		const res3 = await axios.get('http://localhost:3000/json/workers.json')
+  		const sitePath = "http://localhost:3000/"
+  		const res = await axios.get(sitePath + 'json/salon.json')
+  		const res2 = await axios.get(sitePath + 'json/gettimetable.json')
+  		const res3 = await axios.get(sitePath + 'json/workers.json')
   		this.locations = res.data
   		this.times = res2.data
   		this.masters = res3.data
