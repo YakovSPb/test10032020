@@ -1,5 +1,6 @@
  document.addEventListener("DOMContentLoaded", function() {
-
+var json = require('../json/salon.json');
+console.log(json)
 
 new Vue({
   el: '#app',
